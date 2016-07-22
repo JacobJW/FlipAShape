@@ -15,7 +15,7 @@ def flip_it ():
         except ValueError:
             print("Sorry, that's not a valid input. Please use only numbers and make the base larger than 1. \n")
                 
-        elif base.isdigit() == True and int(base) >= 2:
+        if base.isdigit() == True and int(base) >= 2:
             initial = False
             
     run = True
