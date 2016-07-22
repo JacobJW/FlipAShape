@@ -1,4 +1,3 @@
-import os
 
 def flip_it ():
 
@@ -47,6 +46,4 @@ def flip_it ():
         for num in range(base -1, -1, -1):
             print(Triangle[num])
             
-    os.system("pause")
-    
 flip_it()
