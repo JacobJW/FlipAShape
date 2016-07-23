@@ -1,10 +1,15 @@
-
-def flip_it ():
+def userInput():
 
     initial = True
     run = False
     while initial == True:
+        try:
+            shape = input("What shape do you want to flip?\nRight now you can only choose triangle, sorry!\nTo pick triangle, type 'Triangle'.").lower()
+            initial = False
+        except ValueError:
+            print("Please type in 'Triangle'.")
         
+def triangleInput():
         base = input("How many units do you want the base to be? \n")
         print("\n")
         try:   
@@ -16,9 +21,10 @@ def flip_it ():
                 
         if base.isdigit() == True and int(base) >= 2:
             initial = False
-            
-    run = True
-        
+        run = True
+
+def flipTriangle():
+
     if run == True:
        
         # Converts base into an int for usage later on in multiplication
@@ -27,7 +33,6 @@ def flip_it ():
         Triangle = []
         
         # Creates the base of #'s and makes each row have 1 less # , plus indents it by one space to keep triangle format
-        
         for num in range(base, 0, -1):
             Triangle.insert(0, [' #' * num])
             Triangle[0].insert(0, ' ' * (base - num))
@@ -42,8 +47,10 @@ def flip_it ():
         print(" \nFLIPPING . . . \n")
 
         # Since each row is its own list, to flip we print the rows in reverse.
-        
         for num in range(base -1, -1, -1):
             print(Triangle[num])
-            
+
+userInput()
+if shape == "triangle":
+    triangle(input)
 flip_it()
